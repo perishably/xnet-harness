@@ -1,0 +1,12 @@
+[package]
+name = "xnet-system-index"
+description = "Source-bound component discovery and advisory route plans; no executor"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }

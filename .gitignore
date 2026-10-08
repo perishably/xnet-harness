@@ -27,3 +27,5 @@ private-authority/
 *.dylib
 *.pdb
 *.log
+!/lab/accuracy_preview/evidence/offline-checks-r01.log
+!/lab/accuracy_preview/evidence/feedback-preview-checks-r01.log

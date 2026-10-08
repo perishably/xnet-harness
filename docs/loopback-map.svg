@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+<title id="title">XNET~ — LOOP BACK! source and status tree</title>
+<desc id="desc">Recorded October 8 2026 snapshot. Native hourly r02 feed is verified and enabled; Stop and Start were tested, with 82 local cloud-mount files read back on each destination but no remote upload proof. Spent development r03 produced 3 of 9 public assertions in 11 model calls and 362.656 seconds; acceptance was false, not a paired or official score. Feedback extension has ten offline checks; a private follow-up is in progress with no new result. Clean Rust CI is pending.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#e3eee9;font-size:18px}.small{font-size:15px;fill:#abc0b7}.heading{font-size:23px;font-weight:600}.branch{fill:#172721;stroke:#3b5b4d}.path{fill:none;stroke:#5d7c6d;stroke-width:2}.checked{fill:#8cdcb5}.pending{fill:#f3ce8b}</style>
+<rect width="1200" height="840" fill="#101a15"/>
+<style>.failed{fill:#f4a5b0}</style>
+<text x="50" y="65" style="font-size:40px;font-weight:600">XNET~</text><path d="M45 78Q180 135 375 40" stroke="#8cdcb5" stroke-width="3" fill="none"/>
+<text x="50" y="121">LOOP BACK! · by Felix Xavier Lopez</text><text x="50" y="151" class="small">Recorded source/status snapshot · 2026-10-08 · not a live monitor or service controller</text>
+<rect class="branch" x="375" y="185" width="450" height="82" rx="14"/><text x="600" y="220" text-anchor="middle" class="heading">The XNET~ utility layer</text><text x="600" y="247" text-anchor="middle" class="small">Source → context → reviewed evidence → source</text>
+<path class="path" d="M600 267V300M230 300H970M230 300V326M600 300V326M970 300V326"/>
+<rect class="branch" x="50" y="326" width="360" height="345" rx="14"/><rect class="branch" x="420" y="326" width="360" height="345" rx="14"/><rect class="branch" x="790" y="326" width="360" height="345" rx="14"/>
+<text x="75" y="367" class="heading">01 · INDEX IN</text><text x="75" y="397" class="small">Prepare before the question</text>
+<circle class="checked" cx="80" cy="434" r="6"/><text x="97" y="440">Public coding feed</text><text x="97" y="465" class="small">Hourly r02 verified + enabled</text>
+<circle class="checked" cx="80" cy="506" r="6"/><text x="97" y="512">Metadata + source window</text><text x="97" y="537" class="small">44 index + 10 window checks</text>
+<circle class="checked" cx="80" cy="578" r="6"/><text x="97" y="584">Catalog + Jcode discovery</text><text x="97" y="609" class="small">22 catalog + 7 peer checks</text><text x="75" y="647" class="small">Implemented ≠ running</text>
+<text x="445" y="367" class="heading">02 · WORK + REVIEW</text><text x="445" y="397" class="small">Caller owns model and actions</text>
+<text x="445" y="440">4B first · interchangeable adapter</text><text x="445" y="480">Oroboros · HALO · HCE</text><text x="445" y="518">Claw + scope admission</text>
+<circle class="failed" cx="450" cy="564" r="6"/><text x="467" y="570">r03: 3/9 · not accepted</text><text x="467" y="595" class="small">11 calls · 362.656 s · spent task</text><text x="467" y="620" class="small">Feedback follow-up: no result yet</text><text x="445" y="647" class="small">Not paired / official SWE-bench</text>
+<text x="815" y="367" class="heading">03 · INDEX OUT</text><text x="815" y="397" class="small">Keep exact sources and proof</text>
+<text x="815" y="440">Ledger + full-hash pointers</text><circle class="checked" cx="820" cy="477" r="6"/><text x="837" y="483">82 local files per mount</text><text x="837" y="508" class="small">Readback; upload unproven</text>
+<text x="815" y="550">Fresh validation → cards</text><circle class="pending" cx="820" cy="587" r="6"/><text x="837" y="593">Rust discovery: CI pending</text><text x="815" y="647" class="small">No automatic weight updates</text>
+<path class="path" d="M970 671V709H230V671"/><text x="600" y="738" text-anchor="middle">Loop back with reviewed source pointers.</text>
+<text x="600" y="775" text-anchor="middle" class="small">Native feed Stop/Start tested · no model start · clean Rust CI pending</text><text x="600" y="803" text-anchor="middle" class="small">Explore loopback-map.html · upstream licenses and historical evidence retained</text>
+</svg>

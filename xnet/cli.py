@@ -9,10 +9,16 @@ from .protocol import sha256
 
 
 def main(argv=None):
+    import sys
+    values = list(sys.argv[1:] if argv is None else argv)
+    if values and values[0] == 'loopback':
+        from .loopback_cli import main as loopback_main
+        return loopback_main(values[1:])
     parser = argparse.ArgumentParser(prog="xnet", description="XNET~ source-context utility")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("version")
     sub.add_parser("demo")
+    sub.add_parser("loopback", help="metadata prewarming, system directory and explicit public code feeds")
     capsule = sub.add_parser("capsule")
     capsule.add_argument("--text", required=True)
     capsule.add_argument("--ring", type=int, default=1)

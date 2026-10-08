@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased — 2026-10-08 Loopback upgrade
+
+- Added bounded metadata-first indexing, immutable source pointers, revision invalidation, advisory prefetch and a verified hot source window. QR-style tags remain digest locators rather than model image input.
+- Added the portable system directory, Python/Jcode discovery peer and the source-compatible `xnet-system-index` Rust crate. Discovery grants no execution authority. Native compilation remains pending clean CI after a local linker dependency failure.
+- Added an allowlisted public GitHub practice feed with durable request budgets, monotonic timing, UTC receipts, resumable cursors, cooperative owner-specific controls and optional verified local mirror copies.
+- Added caller-pinned practice projection admission. Practice streams are excluded from evaluation and carry no automatic lesson promotion authority.
+- Staged the accuracy preview lab API for caller-owned generation, HALO measurement and separate public-test review; its copied-source 25-case offline suite passed. External feed-context admission into that lab remains unwired. The spent r03 development diagnostic completed with 3/9 public assertions, 11 model calls, 362.656 seconds and `acceptance=false`; this is not a paired comparison or official SWE-bench execution.
+- Added an optional source-bound feedback-trace context extension after public failure detail could be lost during prompt rotation. Ten offline checks passed; a further private spent diagnostic is in progress, with no result or score effect claimed yet.
+- Retained offline results separately: metadata 44/44, catalog 22/22, Jcode peer 7/7, feed 33/33 and practice window 10/10. One live feed cycle gathered five public repositories and 22 partial snippets, copied 75 files to each configured cloud desktop mount in 8.735 seconds, and made no model calls. Remote upload was not proven.
+- Verified and enabled the native hourly r02 feed on a shared native-visible C control root, tested owner-specific Stop/Start, and rehashed 82 files on each local cloud mount. Controls start only the feed, not a model. Remote upload remains unproven.
+- Completed the full Python regression: 767 discovered, 731 passed and 36 native-only skips in 428.203 seconds. Verified 13 wheel payload paths and six retained licenses. Clean Rust CI remains pending.
+- Added the interactive Loopback tree and agent source-directory guide. Existing benchmark failures, pilot limitations and upstream notices remain intact.
+
+These additions are prepared source, not a claim that every component is running or that model capability increased. No new benchmark score or weights-training result is asserted.
+
 ## 0.1.0
 
 Prepared the initial MIT public source release of **XNET~ — LOOP BACK!** by Felix Xavier Lopez.
