@@ -1,0 +1,15 @@
+test_01_bound_packet_and_pointer_match_exact_completed_public_cas (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_01_bound_packet_and_pointer_match_exact_completed_public_cas) ... ok
+test_02_stale_patch_cannot_show_an_old_trace_as_current (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_02_stale_patch_cannot_show_an_old_trace_as_current) ... ok
+test_03_wrong_profile_in_completed_packet_is_refused (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_03_wrong_profile_in_completed_packet_is_refused) ... ok
+test_04_corrupt_cas_is_refused_without_source_fallback (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_04_corrupt_cas_is_refused_without_source_fallback) ... ok
+test_05_changed_sql_pointer_cannot_replace_the_durable_review_receipt (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_05_changed_sql_pointer_cannot_replace_the_durable_review_receipt) ... ok
+test_06_multibyte_total_cap_and_exact_original_offsets (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_06_multibyte_total_cap_and_exact_original_offsets) ... ok
+test_07_unknown_review_provides_no_excerpt_and_no_retry_or_promotion (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_07_unknown_review_provides_no_excerpt_and_no_retry_or_promotion) ... ok
+test_08_exact_status_and_existing_policy_are_not_changed (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_08_exact_status_and_existing_policy_are_not_changed) ... ok
+test_09_rotated_feedback_is_measured_in_base_context_before_generation (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_09_rotated_feedback_is_measured_in_base_context_before_generation) ... ok
+test_10_plan_and_extension_source_pin_drift_are_refused (lab.accuracy_preview.test_feedback_preview.FeedbackPreviewTests.test_10_plan_and_extension_source_pin_drift_are_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 13.383s
+
+OK
