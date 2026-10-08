@@ -1075,6 +1075,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "xnet-system-index"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sha2",
+ "thiserror",
+]
+
+[[package]]
 name = "xnet-transport"
 version = "0.1.0"
 dependencies = [

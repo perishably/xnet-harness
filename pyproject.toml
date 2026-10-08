@@ -32,12 +32,13 @@ xnet = "xnet.cli:main"
 
 [tool.setuptools.packages.find]
 namespaces = true
-include = ["xnet", "xnet_sdk", "adapters.openclaw", "adapters.hermes", "adapters.kimi", "adapters.jcode", "adapters.bridge", "adapters.mobile", "adapters.dojo"]
+include = ["xnet", "xnet_sdk", "adapters.openclaw", "adapters.hermes", "adapters.kimi", "adapters.jcode", "adapters.bridge", "adapters.mobile", "adapters.dojo", "adapters.loopback"]
 exclude = ["tests*", "work*", "data*", "runtime*", "rust*"]
 
 [tool.setuptools]
 include-package-data = false
 
 [tool.setuptools.package-data]
-xnet = ["data/components.json"]
+xnet = ["data/components.json", "data/system-directory.json"]
 "adapters.dojo" = ["assets/*.html", "assets/*.js", "assets/*.css"]
+"adapters.loopback" = ["*.ps1"]

@@ -81,6 +81,44 @@ print("Source round-trip verified.")
 
 For persistent capsules, `HceCapsuleStore` borrows an initialized caller-owned `Ledger` and a mandatory scope gate. The caller selects the storage root, source classification and task. See [Oroboros](docs/oroboros.md).
 
+### Loopback: index ahead, review before accepting
+
+**LOOP BACK!** Prepare source context before a question arrives, then preserve the exact source and review the proposed repair. Start with a new local demo root:
+
+```sh
+python -m xnet loopback index demo --root runtime/my-first-loopback
+python -m xnet loopback catalog --command query --query "jcode rag halo" --limit 8
+python -m xnet loopback catalog --command select --module-id adapters/jcode/system_directory_peer --workspace-root . --verify-selected
+```
+
+The demo is offline and makes no model calls. Catalog selection discovers source; it neither starts a tool nor grants permission. Rebuild its source hashes with `python scripts/build_system_directory.py` after changing the checkout.
+
+The [public practice feed](docs/loopback-feed.md) has explicit initialization, bounded hourly acquisition and cooperative Start/Stop helpers. Its [practice window](adapters/loopback/feed_window.py) takes a caller-pinned projection generation and prepares verified partial source passages. Feed data stays practice-only; it cannot silently enter evaluation or become a promoted lesson. Local cloud mounts are optional and do not establish remote upload.
+
+The staged [accuracy preview lab](lab/accuracy_preview/README.md) exports `PreviewLoop`, `QualityPolicy`, `adapter` and `HaloBinding`. It requires operator-owned configuration, generation callbacks and an isolated public-test worker. Its CLI defaults to dry-run. One spent development diagnostic has now completed; this does not establish paired uplift or official SWE-bench support. External feed-context admission into that lab remains unwired.
+
+| Upgrade check | Recorded result | Scope |
+|---|---:|---|
+| Metadata index | 44/44 | Offline provenance, revision, window and contamination controls |
+| System catalog | 22/22 | Offline schema and source verification |
+| Jcode directory peer | 7/7 | Offline discovery and source verification |
+| Public feed | 33/33 | Offline clock, bounds, ownership and mirror controls |
+| Practice feed window | 10/10 | Offline pinned practice-source admission |
+| Packaged accuracy preview | 25/25 | Offline copied-source fixtures |
+| Spent development diagnostic r03 | **3/9 public assertions**, 11 model calls, 362.656 s; **acceptance=false** | One previously used task; not paired, fresh transfer or official SWE-bench |
+| Optional feedback-trace context extension | 10/10 offline checks | A further private spent diagnostic is in progress; no effect on coding scores is claimed yet |
+| First live public feed cycle | 5 repositories; 22 partial snippets; 75 files copied to each configured cloud mount in 8.735 s | No model calls; local destination hashes checked; remote upload not proven |
+| Native hourly r02 feed | Verified and enabled; Stop/Start tested; **82 files read back on each local cloud mount** | Shared native-visible C control root; controls do not start models; remote upload unproven |
+| Full Python regression | 767 discovered: **731 passed, 36 native-only skips**, 428.203 s | Utility regression, not model capability |
+| Wheel payload verification | 13 payload paths and six retained licenses checked | Packaging check; the preview lab still requires a source checkout |
+
+The failed r03 acceptance is retained alongside the passing utility checks. Public failure detail could leave the prompt during window rotation while a summary retained only failure status; the optional source-bound feedback extension addresses that context gap, with a further private diagnostic in progress and no new result published. The new Rust discovery crate is source-complete with portable tests, but local compilation stopped at an existing linker dependency issue; clean CI validation remains pending. See the [development evidence](docs/loopback-development-evidence.md) and [historical preview acceptance detail](lab/accuracy_preview/EVIDENCE.md).
+
+[![XNET~ Loopback source and status tree](docs/loopback-map.svg)](docs/loopback-map.html)
+
+Explore the [interactive Loopback tree](docs/loopback-map.html), [Loopback contracts](docs/loopback.md), [development evidence and boundaries](docs/loopback-development-evidence.md), and [agent source-directory guide](AGENTS.md).
+Open the HTML from your checkout to expand branches and inspect the status boundaries; GitHub displays the static preview above.
+
 ### Optional Rust workspace
 
 With a Rust toolchain installed:
@@ -161,6 +199,11 @@ The [component update center](docs/update-center.md) inventories XNET~ and pins 
 
 ## Documentation
 
+- [Interactive Loopback source and status tree](docs/loopback-map.html)
+- [Loopback: index, source window, review and learning boundaries](docs/loopback.md)
+- [Public practice feed and local drive circulation](docs/loopback-feed.md)
+- [Staged accuracy preview lab](lab/accuracy_preview/README.md)
+- [Agent directory usage and scopes](AGENTS.md)
 - [XNET Code and the Jcode lineage](docs/xnet-code.md)
 - [Visual HALO / Oroboros system map](docs/architecture-map.md)
 - [Architecture and integration boundaries](docs/architecture.md)

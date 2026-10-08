@@ -37,5 +37,9 @@ jobs:
         run: cargo +stable test --locked --workspace --manifest-path adapters/jcode/rust/Cargo.toml
       - name: Python utility and native integration tests
         run: python -m unittest discover -s tests -v
+      - name: Optional public-feedback context tests
+        run: python -B -m unittest -v lab.accuracy_preview.test_feedback_preview
       - name: Portable demo
         run: python -m xnet demo
+      - name: Verify checks preserved the source inventory
+        run: python scripts/release_inventory.py --check

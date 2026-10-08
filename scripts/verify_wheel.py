@@ -13,6 +13,14 @@ REQUIRED_PAYLOAD = {
     "adapters/dojo/assets/style.css",
     "xnet/component_updates.py",
     "xnet/data/components.json",
+    "xnet/system_catalog.py",
+    "xnet/loopback_cli.py",
+    "xnet/data/system-directory.json",
+    "adapters/loopback/stream_index.py",
+    "adapters/loopback/feed_engine.py",
+    "adapters/loopback/feed_window.py",
+    "adapters/loopback/feed_control.ps1",
+    "adapters/loopback/schedule_feed.ps1",
 }
 REQUIRED_LICENSES = {
     "LICENSE",

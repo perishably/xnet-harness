@@ -49,3 +49,15 @@ This project uses inbound-equals-outbound licensing under MIT. Contributors keep
 Each pull request must identify copied, adapted and materially generated content, its source and its license. Contributors must not submit code or data they cannot redistribute. Maintainers should update the third-party notices and this provenance map when a merge changes the release's chain of title.
 
 Once signed, the attestation is a provenance record, not a warranty that every upstream dependency is fit for a particular purpose or that a named compatibility target has accepted the integration.
+
+## 2026-10-08 Loopback upgrade record
+
+The upgrade adds XNET-specific metadata indexing and advisory prefetch, the Python/Rust source-directory protocol, Jcode discovery compatibility, a public-feed controller, pinned practice-source admission, staged accuracy-preview interfaces, offline fixtures and documentation. These original XNET additions use this repository's MIT License and credit Felix Xavier Lopez. The earlier signed maintainer statement remains unchanged and dated 2026-10-07; this record does not fabricate a second human signature or alter its candidate-tree verification requirement.
+
+The Python catalog and new Rust crate share XNET's versioned public JSON protocol and synthetic compatibility fixtures. Existing upstream applications and their license notices retain their original scope. A Jcode peer is integration code, not ownership of the Jcode application; local NullClaw controls remain distinct from the upstream agent.
+
+Public GitHub content keeps its repository, immutable commit, path, source URL, digest and upstream license-retention metadata. The feed's original MIT control code does not relicense fetched patches or imply their authors endorsed XNET. The released source must not contain private operational roots, credentials, model weights or restricted evaluation answers. Optional cloud clients, model runtimes, platform SDKs and transitive Rust dependencies retain their separate terms.
+
+The source directory records implemented code rather than live activation. Hashes establish exact bytes relative to a pinned source; they do not prove authorship, semantic truth, universal safety or benchmark correctness. The native hourly r02 feed was verified and enabled, Stop/Start was checked, and 82 local cloud-mount files were read back on each configured destination. This establishes local operation, not remote cloud upload, and feed controls do not start models.
+
+The spent r03 practice diagnostic completed with 3/9 public assertions, 11 model calls, 362.656 seconds and acceptance withheld. It is not a paired or official benchmark result. The optional source-bound public-feedback context extension has ten offline checks and a further private spent diagnostic in progress; no new result or score effect is asserted. The full Python run found 767 tests, with 731 passes and 36 native-only skips in 428.203 seconds; the wheel check covered 13 payload paths and six licenses. Clean native Rust CI remains pending. Historical benchmark and pilot disclosures remain intact, and this update does not alter the original signed statement.
