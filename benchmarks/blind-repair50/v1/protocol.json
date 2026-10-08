@@ -1,0 +1,73 @@
+{
+  "schema": "xnet.blind-repair50.protocol.v1",
+  "benchmark_name": "XNET Blind Repair 50",
+  "benchmark_kind": "custom frozen SWE-style multi-file repair benchmark",
+  "official_swe_bench": false,
+  "base_commit": "87ba50c270cc02abff437567f4f130f5cc397121",
+  "task_count": 50,
+  "lanes": [
+    "raw",
+    "retrieval",
+    "full-xnet"
+  ],
+  "lane_order": {
+    "index_mod_3_0": ["raw", "retrieval", "full-xnet"],
+    "index_mod_3_1": ["retrieval", "full-xnet", "raw"],
+    "index_mod_3_2": ["full-xnet", "raw", "retrieval"]
+  },
+  "inference": {
+    "temperature": 0,
+    "seed": 0,
+    "max_output_tokens": 650,
+    "max_attempts": 2,
+    "stateless_calls": true,
+    "cross_task_kv_reuse": false,
+    "prompt_cache_policy": "disabled at server startup and bound by the run environment receipt",
+    "required_llama_server_flags": [
+      "--no-cache-prompt",
+      "--cache-ram 0",
+      "--no-cache-idle-slots",
+      "--slot-prompt-similarity 0.0"
+    ],
+    "hidden_feedback": false
+  },
+  "selection": "maximum public cases passed among admitted proposals; later attempt breaks an exact tie",
+  "final_solve": "selected proposal passes every public F2P/P2P and every held-out F2P/P2P case",
+  "exam_rules": {
+    "practice_stops_before_prepare": true,
+    "no_prompt_or_policy_edits_after_prepare": true,
+    "no_lesson_promotion_during_exam": true,
+    "candidate_code_is_never_imported_or_executed": true,
+    "failures_timeouts_refusals_and_abstentions_remain_in_denominator": true,
+    "grade_only_after_all_candidates_are_frozen": true
+  },
+  "common_admission": "all lanes use the same bounded payload-preserving response-envelope normalization, strict replacement schema, no-op rejection and bounded inert evaluator",
+  "lane_definitions": {
+    "raw": "public issue, source, tests, fixed evaluator capability declaration, common strict replacement schema and one bounded public-feedback retry",
+    "retrieval": "raw plus deterministic public-only retrieval from the frozen corpus; the same cards remain fixed on retry",
+    "full-xnet": "retrieval plus compact HCE source cards and deterministic routing; its public-feedback retry expands from one to at most three frozen cards"
+  },
+  "success_gate": {
+    "full_minus_raw_minimum_solves": 5,
+    "full_minus_retrieval_minimum_solves": 2,
+    "p2p_preservation_minimum_tasks": 48,
+    "maximum_hidden_or_retrieval_leaks": 0,
+    "maximum_candidate_host_executions": 0,
+    "full_lane_median_task_seconds_maximum": 15,
+    "full_to_raw_total_token_ratio_maximum": 1.25,
+    "confirmatory_full_minus_raw_minimum_solves": 3
+  },
+  "required_reporting": [
+    "first_and_final_joint_solves",
+    "public_f2p_p2p_and_hidden_f2p_p2p",
+    "paired_wins_ties_losses",
+    "input_output_and_total_tokens",
+    "retrieval_tokens_bytes_and_seconds",
+    "prompt_decode_and_total_wall_seconds",
+    "median_and_p95",
+    "retry_noop_schema_timeout_and_abstention_counts",
+    "tokens_and_seconds_per_joint_solve",
+    "model_runtime_hardware_and_source_hashes"
+  ],
+  "claim_template": "On the custom preregistered XNET Blind Repair 50 set, MODEL with full XNET solved X/50 versus Y/50 raw and Z/50 with retrieval only under identical generation budgets. This is not an official SWE-bench result."
+}

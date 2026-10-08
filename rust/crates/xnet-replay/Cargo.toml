@@ -1,0 +1,13 @@
+[package]
+name = "xnet-replay"
+description = "Deterministic replay — rebuild any past task from ledger seq-range + CAS digests"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+xnet-ledger = { path = "../xnet-ledger" }
+xnet-cas = { path = "../xnet-cas" }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }

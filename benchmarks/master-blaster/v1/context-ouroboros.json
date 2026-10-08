@@ -1,0 +1,80 @@
+{
+  "schema_version": "xnet.context-ouroboros.topology-overlay.v1",
+  "overlay_id": "petal-context-ouroboros",
+  "role": "fifth-flower-of-life-petal",
+  "execution_claim": "lineage-and-flow-metadata-only",
+  "active_context": {
+    "bounded": true,
+    "default_max_chars": 12000,
+    "default_max_estimated_tokens": 3000,
+    "absolute_max_estimated_tokens": 32768,
+    "source_access": "allowed-root-line-ranges-only",
+    "evaluator_private_material": "rejected"
+  },
+  "external_memory": {
+    "addressing": "sha256-content-addressed",
+    "integrity": "hmac-signed-capsules-and-receipts",
+    "growth": "governed-by-external-storage-policy",
+    "durable_archive_role": "drive-backed-master-context-record",
+    "archive_mutation": "append-only-content-addressed-capsules",
+    "active_prompt_dependency": "verified-bounded-replay-capsule-only",
+    "active_prompt_loading": "verified-bounded-slices-only"
+  },
+  "jcode_session_policy": {
+    "ephemeral": true,
+    "one_context_turn_per_session": true,
+    "source_exit": "required-after-signed-capsule-persist",
+    "target_restart": "fresh-session-after-capsule-verification",
+    "hidden_history_dependency": "forbidden",
+    "execution_status_source": "external-adapter-receipt"
+  },
+  "tornado_handoff": {
+    "ordered_legs": ["SWIM", "BIKE", "RUN"],
+    "restart_transition": "RUN-to-SWIM",
+    "legs": [
+      {
+        "tag": "SWIM",
+        "shape": "fan-in-spiral",
+        "functions": ["intake", "relevant-bounded-slice", "budget-measurement"],
+        "output": "signed-input-and-slice-hash"
+      },
+      {
+        "tag": "BIKE",
+        "shape": "bounded-work-persist-core",
+        "functions": ["work", "distill", "content-addressed-persist"],
+        "output": "bounded-replay-context-hash"
+      },
+      {
+        "tag": "RUN",
+        "shape": "verify-return-fan-out",
+        "functions": ["fresh-replay", "verify", "return", "close"],
+        "output": "closed-capsule-and-handoff-hash"
+      }
+    ]
+  },
+  "lineage_contract": {
+    "required_fields": [
+      "session_id",
+      "parent_session_id",
+      "provider_id",
+      "model_id",
+      "cycle_index",
+      "handoff_reason",
+      "budget",
+      "input_sha256",
+      "output_sha256",
+      "evaluator_continuity_sha256"
+    ],
+    "anti_cycle": "session_id-must-not-appear-in-lineage",
+    "max_cycles": "configured-fail-closed-bound"
+  },
+  "cycle": [
+    "jcode-session-A",
+    "swim-fan-in",
+    "bike-bounded-core",
+    "external-content-addressed-memory",
+    "run-verify-return",
+    "jcode-session-B-fresh",
+    "earth-heart"
+  ]
+}

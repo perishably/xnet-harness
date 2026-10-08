@@ -1,0 +1,14 @@
+[package]
+name = "xnet_core"
+version = "0.1.0"
+edition = "2021"
+description = "XNET durable local event receipts and bounded fixture workers"
+license = "MIT"
+
+[lib]
+name = "xnet_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "xnet-core"
+path = "src/main.rs"

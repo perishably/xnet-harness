@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xnet-harness"
+version = "0.1.0"
+description = "XNET~ model-agnostic safety, context, retrieval, evaluation, and collaboration harness"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "third_party/*-LICENSE.txt"]
+authors = [{ name = "Felix Xavier Lopez" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = ["ai", "evaluation", "llm", "rag", "safety"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/perishably/xnet-harness"
+Documentation = "https://github.com/perishably/xnet-harness#readme"
+Issues = "https://github.com/perishably/xnet-harness/issues"
+Source = "https://github.com/perishably/xnet-harness"
+
+[project.scripts]
+xnet = "xnet.cli:main"
+
+[tool.setuptools.packages.find]
+namespaces = true
+include = ["xnet", "xnet_sdk", "adapters.openclaw", "adapters.hermes", "adapters.kimi", "adapters.jcode", "adapters.bridge", "adapters.mobile", "adapters.dojo"]
+exclude = ["tests*", "work*", "data*", "runtime*", "rust*"]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.package-data]
+xnet = ["data/components.json"]
+"adapters.dojo" = ["assets/*.html", "assets/*.js", "assets/*.css"]

@@ -1,0 +1,11 @@
+{
+  "base_url": "http://127.0.0.1:18096/v1",
+  "context_tokens": 8192,
+  "max_output_tokens": 512,
+  "model": "replace-with-local-model-id",
+  "model_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "runtime_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "schema": "xnet.local-provider-profile.v1",
+  "seed": 0,
+  "temperature": 0.0
+}

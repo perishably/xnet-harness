@@ -1,0 +1,10 @@
+[package]
+name = "jcode-xnet-adapter"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Jcode specific adapter to the independent XNET sibling"
+[dependencies]
+xnet-sdk = { path = "../../../../rust/xnet-sdk" }
+jcode-xnet-policy = { path = "../crates/jcode-xnet-policy" }
+jcode-xnet-scope = { path = "../crates/jcode-xnet-scope" }

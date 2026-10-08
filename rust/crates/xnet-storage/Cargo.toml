@@ -1,0 +1,10 @@
+[package]
+name = "xnet-storage"
+description = "Tier enforcer — NVMe hot / D: warm prefetch / Proton cold recovery; off-path discipline"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+xnet-cas = { path = "../xnet-cas" }
+serde = { workspace = true }

@@ -1,0 +1,66 @@
+{
+  "schema": "xnet.repair-card-corpus.v1",
+  "description": "Generic public repair heuristics frozen before Blind Repair 50 model inference. No gold patches, hidden cases, task IDs or expected outputs.",
+  "cards": [
+    {
+      "id": "boundary-contract",
+      "tags": ["boundary", "comparison", "range", "threshold"],
+      "text": "Translate every boundary word in the API contract into an explicit comparison. Check equality, empty input, the first valid value and the first invalid value. Preserve comparisons that public passing cases already establish."
+    },
+    {
+      "id": "identity-and-multiplicity",
+      "tags": ["identity", "duplicate", "order", "join"],
+      "text": "When records repeat, preserve multiplicity and input order unless the contract explicitly requests deduplication. Composite identity requires every named key; matching one field is insufficient."
+    },
+    {
+      "id": "accumulate-dont-overwrite",
+      "tags": ["aggregate", "total", "group", "duplicate"],
+      "text": "For aggregation, update the prior cell or group value instead of replacing it. Initialize missing groups once, include negative and zero contributions, and avoid inventing absent groups."
+    },
+    {
+      "id": "state-transition-order",
+      "tags": ["state", "sequence", "event", "transition"],
+      "text": "Process state changes in the declared order. Apply an event only from allowed prior states, keep unrelated entities independent, and decide whether the triggering event belongs before or after the state change."
+    },
+    {
+      "id": "round-at-contract-edge",
+      "tags": ["round", "units", "integer", "money"],
+      "text": "Keep intermediate arithmetic exact when possible and round at the contract's stated edge. Convert units once, retain signs, and distinguish per-item rounding from rounding the final total."
+    },
+    {
+      "id": "missing-versus-false",
+      "tags": ["missing", "optional", "default", "boolean"],
+      "text": "Treat missing, null, zero, false and an empty container as distinct values unless the API says otherwise. Test key presence separately from truthiness and apply defaults only to the missing case."
+    },
+    {
+      "id": "parser-boundaries",
+      "tags": ["parse", "escape", "quote", "delimiter"],
+      "text": "A parser should track quoting or escaping state before splitting. Preserve literal escaped delimiters, trailing empty fields and empty input according to the contract; do not repair data by silently dropping tokens."
+    },
+    {
+      "id": "window-membership",
+      "tags": ["time", "window", "interval", "schedule"],
+      "text": "Write interval membership from the contract before coding. Decide both endpoints, overnight or wraparound behavior, and whether adjacent windows overlap. Keep ordering deterministic."
+    },
+    {
+      "id": "conditional-validation",
+      "tags": ["validate", "required", "condition", "error"],
+      "text": "Validate a field only when its enabling condition holds. Presence may satisfy a requirement even when the value is false or zero. Raise only the declared exception and preserve valid legacy inputs."
+    },
+    {
+      "id": "multi-file-call-chain",
+      "tags": ["helper", "module", "call", "source"],
+      "text": "Trace the entry function through every supplied local helper before editing. Fix the narrowest function that owns the broken rule, preserve declared imports, and return complete source only for changed editable files."
+    },
+    {
+      "id": "public-feedback-delta",
+      "tags": ["feedback", "retry", "failure", "no-op"],
+      "text": "On retry, use the exact public failure as a counterexample. Change the implementation rather than formatting, keep already passing behavior, and avoid repeating a semantically identical patch."
+    },
+    {
+      "id": "stable-selection",
+      "tags": ["select", "sort", "tie", "rank"],
+      "text": "Separate eligibility from ranking. Filter by every declared condition, apply primary and secondary keys in the stated direction, and preserve input order for unresolved ties when stability is required."
+    }
+  ]
+}

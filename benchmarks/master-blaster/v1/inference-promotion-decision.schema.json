@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xnet.local/schemas/inference-promotion-decision.v1.json",
+  "title": "XNET inference classification and promotion receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "action", "classification", "verification_tier", "authority_id",
+    "policy_sha256", "subject", "tags", "reason_codes", "metrics_summary",
+    "evidence_record_sha256s", "artifact_reference", "previous_decision_sha256",
+    "issued_evidence_epoch", "valid_through_evidence_epoch", "seven_gates_receipt_sha256s",
+    "seven_gates_required", "operational_authority_granted", "benchmark_feedback_allowed",
+    "receipt_sha256", "receipt_hmac_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "xnet.inference-promotion-decision.v1"},
+    "action": {"enum": ["promote", "withhold", "demote"]},
+    "classification": {"enum": ["Standard", "Candidate Outlier", "Outlier 501", "Quarantined Anomaly"]},
+    "verification_tier": {"type": "integer", "minimum": 0, "maximum": 3},
+    "authority_id": {"$ref": "#/$defs/identifier"},
+    "policy_sha256": {"$ref": "#/$defs/sha256"},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_id", "benchmark_manifest_sha256", "task_family", "task_id",
+        "evaluator_id", "evaluator_kind", "model_id", "hardware_profile_sha256",
+        "token_budget", "candidate_id", "candidate_config_sha256", "flower_role"
+      ],
+      "properties": {
+        "benchmark_id": {"$ref": "#/$defs/identifier"},
+        "benchmark_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "task_family": {"$ref": "#/$defs/identifier"},
+        "task_id": {"$ref": "#/$defs/identifier"},
+        "evaluator_id": {"$ref": "#/$defs/identifier"},
+        "evaluator_kind": {"$ref": "#/$defs/identifier"},
+        "model_id": {"$ref": "#/$defs/identifier"},
+        "hardware_profile_sha256": {"$ref": "#/$defs/sha256"},
+        "token_budget": {"type": "integer", "minimum": 1, "maximum": 10000000},
+        "candidate_id": {"$ref": "#/$defs/identifier"},
+        "candidate_config_sha256": {"$ref": "#/$defs/sha256"},
+        "flower_role": {"enum": ["solver", "verifier", "challenger", "synthesizer"]}
+      }
+    },
+    "tags": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+    "reason_codes": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/identifier"}},
+    "metrics_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sample_count", "independent_replay_count", "unique_task_count", "cohort_candidate_count",
+        "median_correctness_ppm", "median_latency_ms", "median_cost_microunits",
+        "median_output_tokens", "median_verified_efficiency"
+      ],
+      "properties": {
+        "sample_count": {"type": "integer", "minimum": 1},
+        "independent_replay_count": {"type": "integer", "minimum": 1},
+        "unique_task_count": {"type": "integer", "minimum": 1},
+        "cohort_candidate_count": {"type": "integer", "minimum": 1},
+        "median_correctness_ppm": {"$ref": "#/$defs/rational"},
+        "median_latency_ms": {"$ref": "#/$defs/rational"},
+        "median_cost_microunits": {"$ref": "#/$defs/rational"},
+        "median_output_tokens": {"$ref": "#/$defs/rational"},
+        "median_verified_efficiency": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "evidence_record_sha256s": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+    "artifact_reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["response_sha256", "source_metric_receipt_sha256"],
+      "properties": {
+        "response_sha256": {"$ref": "#/$defs/sha256"},
+        "source_metric_receipt_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "previous_decision_sha256": {"$ref": "#/$defs/sha256"},
+    "issued_evidence_epoch": {"type": "integer", "minimum": 1},
+    "valid_through_evidence_epoch": {"type": "integer", "minimum": 1},
+    "seven_gates_receipt_sha256s": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+    "seven_gates_required": {"const": true},
+    "operational_authority_granted": {"const": false},
+    "benchmark_feedback_allowed": {"const": false},
+    "receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "receipt_hmac_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "allOf": [
+    {"if": {"properties": {"classification": {"const": "Standard"}}}, "then": {"properties": {"verification_tier": {"const": 1}}}},
+    {"if": {"properties": {"classification": {"const": "Candidate Outlier"}}}, "then": {"properties": {"verification_tier": {"const": 2}}}},
+    {"if": {"properties": {"classification": {"const": "Outlier 501"}}}, "then": {"properties": {"verification_tier": {"const": 3}, "action": {"const": "promote"}}}},
+    {"if": {"properties": {"classification": {"const": "Quarantined Anomaly"}}}, "then": {"properties": {"verification_tier": {"const": 0}}}},
+    {"if": {"properties": {"action": {"const": "promote"}}}, "then": {"properties": {"classification": {"const": "Outlier 501"}}}}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/+\\-]{0,127}$"},
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer", "minimum": 0},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

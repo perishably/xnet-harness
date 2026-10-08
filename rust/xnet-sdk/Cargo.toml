@@ -1,0 +1,9 @@
+[package]
+name = "xnet-sdk"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Rust application SDK for the separately owned XNET runtime"
+[dependencies]
+xnet-fabric = { path = "../xnet-fabric" }
+serde_json.workspace = true

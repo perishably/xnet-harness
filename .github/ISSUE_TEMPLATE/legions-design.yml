@@ -1,0 +1,98 @@
+name: "Legions distributed-compute design"
+description: "Propose a runtime layer above the transport-free Legions protocol core."
+title: "[Legions design]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Legions currently provides a transport-free protocol core; it does not run or transmit work, discover nodes, schedule jobs, enforce a sandbox, or implement quorum. Begin a runtime proposal with a threat model, wire schemas, and an inert simulator. A prototype must remain disabled by default.
+  - type: textarea
+    id: use_case
+    attributes:
+      label: "Use case and non-goals"
+      description: "Describe the bounded job and why distribution is needed. State what the design will not support."
+    validations:
+      required: true
+  - type: textarea
+    id: opt_in
+    attributes:
+      label: "Explicit node opt-in"
+      description: "Define enrollment, operator consent, node identity, inspection, removal, and prevention of ambient discovery."
+    validations:
+      required: true
+  - type: textarea
+    id: jobs
+    attributes:
+      label: "Allowlisted job types"
+      description: "List versioned operations and explain how arbitrary commands and model-supplied code are refused."
+    validations:
+      required: true
+  - type: textarea
+    id: budgets
+    attributes:
+      label: "Budgets and containment"
+      description: "Specify enforced CPU, memory, storage, network, wall-time, retry, concurrency, and monetary limits."
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: "Capability advertisement"
+      description: "Define signed, expiring capabilities, measurement provenance, compatibility, and downgrade behavior."
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: "Content-addressed inputs"
+      description: "Bind complete hashes, sizes, classification, authorization, fetch rules, and local verification before execution."
+    validations:
+      required: true
+  - type: textarea
+    id: receipts
+    attributes:
+      label: "Signed receipts and recovery"
+      description: "Cover reservation, start, result, failure, cancellation, idempotency, uncertain outcome, signer trust, rotation, and replay."
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: "Result verification or quorum"
+      description: "Define deterministic checks or an independence-aware quorum, dissent handling, and the limits of agreement."
+    validations:
+      required: true
+  - type: textarea
+    id: secrets
+    attributes:
+      label: "Secret isolation"
+      description: "Show the minimum job capability and how host credentials, private ledgers, source data, outputs, and logs stay isolated."
+    validations:
+      required: true
+  - type: textarea
+    id: revocation
+    attributes:
+      label: "Revocation and kill switch"
+      description: "Define node/key/job revocation, dispatch stop, local cancellation, offline coordinator behavior, and audit evidence."
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: "Threat model and synthetic tests"
+      description: "List adversaries, trust assumptions, abuse cases, negative vectors, and tests that use no real remote worker or secret."
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Design checks"
+      options:
+        - label: "I will describe this work as a design or prototype until the code and evidence establish otherwise."
+          required: true
+        - label: "Participation is explicit opt-in and the node enforces its own limits."
+          required: true
+        - label: "The proposal includes all nine safety areas above and a recovery contract."
+          required: true
+        - label: "The proposal does not require changes to frozen benchmark material."
+          required: true

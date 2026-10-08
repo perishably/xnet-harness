@@ -1,0 +1,41 @@
+name: Utility checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  utility:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install Python source checkout
+        run: python -m pip install -e .
+      - name: Build source wheel
+        run: python -m pip wheel . --no-cache-dir --no-deps --wheel-dir dist
+      - name: Verify wheel payload and licenses
+        run: python scripts/verify_wheel.py dist
+      - name: Verify release inventory
+        run: python scripts/release_inventory.py --check
+      # Each native command has its own step. The runner's shell exit check must
+      # report a failed test before a later successful command resets its status.
+      - name: Install Rust toolchain
+        run: rustup toolchain install stable --profile minimal
+      - name: Rust utility tests
+        run: cargo +stable test --locked --workspace --manifest-path rust/Cargo.toml
+      - name: Build native XNET CLI
+        run: cargo +stable build --locked --manifest-path rust/Cargo.toml -p xnet-cli
+      - name: Jcode sibling adapter tests
+        run: cargo +stable test --locked --workspace --manifest-path adapters/jcode/rust/Cargo.toml
+      - name: Python utility and native integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Portable demo
+        run: python -m xnet demo

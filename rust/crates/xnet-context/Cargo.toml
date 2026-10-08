@@ -1,0 +1,13 @@
+[package]
+name = "xnet-context"
+description = "Context Ouroboros — SWIM/BIKE/RUN depth, bounded capsule handoff, Context Spring profile"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+xnet-ledger = { path = "../xnet-ledger" }
+xnet-cas = { path = "../xnet-cas" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }

@@ -1,0 +1,11 @@
+[package]
+name = "xnet-cas"
+description = "Content-addressed store: hash-addressed objects, rehash-on-read, crash-safe writes"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+xnet-ledger = { path = "../xnet-ledger" }
+sha2 = { workspace = true }
+thiserror = { workspace = true }

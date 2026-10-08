@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Private security report"
+    url: "https://github.com/perishably/xnet-harness/security/advisories/new"
+    about: "Report vulnerabilities privately; do not publish exploit details or secrets."
+  - name: "Contribution guide"
+    url: "https://github.com/perishably/xnet-harness/blob/main/CONTRIBUTING.md"
+    about: "Read the contracts, evidence rules, and local test commands before opening an issue."

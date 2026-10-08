@@ -1,0 +1,5 @@
+# Source identity contracts hash exact bytes. Preserve reviewed source bytes.
+* -text
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

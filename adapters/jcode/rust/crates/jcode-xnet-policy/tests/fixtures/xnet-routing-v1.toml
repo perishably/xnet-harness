@@ -1,0 +1,29 @@
+version = "xnet-routing-v1"
+
+[[routes]]
+id = "daybreak-primary"
+role = "primary"
+model_spec = "openai-oauth:gpt-daybreak-blue-latest"
+priority = 10
+offline = false
+
+[[routes]]
+id = "luna-fast-worker"
+role = "fast-worker"
+model_spec = "openai-oauth:gpt-6-luna"
+priority = 10
+offline = false
+
+[[routes]]
+id = "terra-balanced-worker"
+role = "balanced-worker"
+model_spec = "openai-oauth:gpt-5.6-terra"
+priority = 10
+offline = false
+
+[[routes]]
+id = "qwen-local-fallback"
+role = "offline-fallback"
+model_spec = "xnet-local:qwen2.5-coder-7b-instruct-abliterated-q6k"
+priority = 10
+offline = true

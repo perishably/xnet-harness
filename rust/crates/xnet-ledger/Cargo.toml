@@ -1,0 +1,12 @@
+[package]
+name = "xnet-ledger"
+description = "SISMA append-only hash-chained receipt ledger — the sole mutation channel of XNET"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }

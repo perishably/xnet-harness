@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="300" viewBox="0 0 1400 300" role="img" aria-labelledby="title desc">
+  <title id="title">Felix Xavier Lopez build quote</title>
+  <desc id="desc">John Wick did it with a pencil. I did it with a laptop. Felix Xavier Lopez.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0d1c33"/>
+      <stop offset="1" stop-color="#101f2c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.55" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="1392" height="292" rx="30" fill="url(#background)" stroke="#29435f" stroke-width="2"/>
+  <path d="M80 70 C250 30 390 105 560 62 C720 22 870 95 1030 58 C1140 32 1240 43 1320 62"
+        fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <text x="700" y="170" text-anchor="middle" fill="#f8fbff"
+        font-family="Segoe Script, Brush Script MT, Lucida Handwriting, cursive"
+        font-size="50" font-style="italic">“John Wick did it with a pencil. I did it with a laptop.”</text>
+  <text x="700" y="225" text-anchor="middle" fill="#67e8f9"
+        font-family="Inter, Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="3">— FELIX XAVIER LOPEZ</text>
+  <text x="700" y="264" text-anchor="middle" fill="#9fb3c8"
+        font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="650" letter-spacing="4">XNET~  •  LOOP BACK!</text>
+</svg>

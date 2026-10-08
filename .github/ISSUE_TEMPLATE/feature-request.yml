@@ -1,0 +1,84 @@
+name: "Feature or extension proposal"
+description: "Propose a focused, caller-owned interface or improvement."
+title: "[Proposal]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Start with the smallest versioned boundary and synthetic acceptance test. External applications keep their own lifecycle, credentials, tools, and contribution process.
+  - type: dropdown
+    id: seam
+    attributes:
+      label: "Extension point"
+      options:
+        - "Model or provider adapter"
+        - "Retrieval or context selection"
+        - "HALO evidence or certificate design"
+        - "Evaluator"
+        - "Storage transport"
+        - "Claw integration"
+        - "Core schema or protocol"
+        - "SDK, native app, or developer experience"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem and user"
+      description: "Describe the concrete problem, affected caller, and current limitation."
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: "Proposed contract"
+      description: "Describe versioned inputs, outputs, limits, ownership, and compatibility behavior."
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: "Authority and trust boundary"
+      description: "Who authorizes actions, owns credentials and lifecycle, classifies sources, and verifies expected identities?"
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: "Failure and recovery"
+      description: "Cover denial, timeout, crash, uncertain outcome, retry, cancellation, and rollback as applicable."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Synthetic acceptance tests"
+      description: "List tests that require no live model, account, device, provider, or private data."
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: "Dependencies and provenance"
+      description: "List new dependencies, copied or adapted work, licenses, and retained notices. Write none when there are none."
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: "Non-goals and evidence limits"
+      description: "State what the proposal will not establish."
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Proposer checks"
+      options:
+        - label: "The caller retains model, credential, tool, session, and external-service control."
+          required: true
+        - label: "The proposal does not require editing frozen benchmark material."
+          required: true
+        - label: "I can submit the proposed material under MIT and will preserve upstream notices."
+          required: true

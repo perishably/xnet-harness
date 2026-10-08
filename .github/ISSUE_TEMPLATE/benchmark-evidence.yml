@@ -1,0 +1,85 @@
+name: "Benchmark evidence"
+description: "Submit a reproducible performance or capability observation."
+title: "[Evidence]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Evidence must preserve the benchmark contract and disclose failures and cost. Do not submit hidden answers, private corpora, credentials, model weights, or restricted outputs.
+  - type: input
+    id: claim
+    attributes:
+      label: "Bounded claim"
+      description: "State one result for one exact configuration."
+      placeholder: "Configuration X resolved N of M public cases under budget B."
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: "Fixture and provenance"
+      description: "Give suite name/version, manifest hashes, source URLs/licenses, split identity, and any adaptations."
+    validations:
+      required: true
+  - type: textarea
+    id: engine
+    attributes:
+      label: "Engine configuration"
+      description: "Identify model/weights, runner, tokenizer, template, launch configuration, hardware, and relevant dependency versions."
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: "Method and freeze point"
+      description: "Describe source access, retrieval, prompt construction, attempts, seeds, choices frozen before held-out grading, and contamination controls."
+    validations:
+      required: true
+  - type: textarea
+    id: grader
+    attributes:
+      label: "Grader and decision rule"
+      description: "Identify grader code/version, thresholds, abstention treatment, and infrastructure-error handling."
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: "Retained outputs and receipts"
+      description: "Link public machine-readable outputs, complete hashes, logs, and verification instructions."
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: "Results and uncertainty"
+      description: "Report denominators, failures, exclusions, variance or intervals, and conflicting results."
+    validations:
+      required: true
+  - type: textarea
+    id: cost
+    attributes:
+      label: "Complete cost"
+      description: "Report input/output tokens, retries, wall time, hardware/runtime, and monetary cost. Separate cache returns from new solves."
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: "Interpretation limits"
+      description: "Explain what the observation does not establish."
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Evidence checks"
+      options:
+        - label: "I did not modify the frozen benchmark sources, corpus, manifest, protocol, or hidden material."
+          required: true
+        - label: "I separated utility checks, retrieval recall, and model reasoning claims."
+          required: true
+        - label: "All linked artifacts may be redistributed under their stated terms."
+          required: true
+        - label: "The claim names synthetic, adapted, partial, or unofficial benchmarks accurately."
+          required: true

@@ -1,0 +1,15 @@
+[package]
+name = "xnet-runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Independent XNET durable utility runtime; no model or Jcode dependency"
+[dependencies]
+xnet-fabric = { path = "../xnet-fabric" }
+xnet-ledger = { path = "../crates/xnet-ledger" }
+xnet-cas = { path = "../crates/xnet-cas" }
+xnet-context = { path = "../crates/xnet-context" }
+xnet-router = { path = "../crates/xnet-router" }
+xnet-gates = { path = "../crates/xnet-gates" }
+xnet-replay = { path = "../crates/xnet-replay" }
+serde_json.workspace = true

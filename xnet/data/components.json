@@ -1,0 +1,118 @@
+{
+  "schema": "xnet.component-manifest.v1",
+  "components": [
+    {
+      "id": "xnet",
+      "name": "XNET~ Harness",
+      "official_origin": "https://github.com/perishably/xnet-harness",
+      "channel": "stable",
+      "update_supported": false,
+      "update_reason": "source-release-self-replacement-not-enabled",
+      "update_mode": "report-only",
+      "release_policy": "latest-stable",
+      "pinned": {
+        "version": "0.1.0",
+        "tag": null,
+        "commit": null,
+        "tag_object": null,
+        "release_id": null,
+        "published_at": null,
+        "release_url": null,
+        "release_api_url": "https://api.github.com/repos/perishably/xnet-harness/releases/latest"
+      },
+      "license": {
+        "spdx": "MIT",
+        "notice_path": "LICENSE",
+        "notice_sha256": "84637defbd34a52253c859bd2f2999f9c4dee74df2cc3b2df0a9bd942dadacb4"
+      },
+      "checksum_manifest": null,
+      "release_assets": {},
+      "platform_assets": {},
+      "version_probe": null
+    },
+    {
+      "id": "jcode",
+      "name": "Jcode",
+      "official_origin": "https://github.com/1jehuang/jcode",
+      "channel": "stable",
+      "update_supported": false,
+      "update_reason": "mutation-disabled-in-v0.1.0",
+      "update_mode": "check-only",
+      "release_policy": "pinned-stable",
+      "pinned": {
+        "version": "0.91.0",
+        "tag": "v0.91.0",
+        "commit": "439a243bb49a78456923f4abd412ddd8d815bac1",
+        "tag_object": "d2ffcd62c9bc540dd913a046d62cdc0307b5e189",
+        "release_id": 404294885,
+        "published_at": "2026-10-06T04:25:53Z",
+        "release_url": "https://github.com/1jehuang/jcode/releases/tag/v0.91.0",
+        "release_api_url": "https://api.github.com/repos/1jehuang/jcode/releases/tags/v0.91.0"
+      },
+      "license": {
+        "spdx": "MIT",
+        "notice_path": "third_party/jcode-LICENSE.txt",
+        "notice_sha256": "c3bb716da40c2d97ea31378126b4a3e093a1980f9c6b7dab815fd8ced0fc1630"
+      },
+      "checksum_manifest": {
+        "name": "SHA256SUMS",
+        "size": 836,
+        "sha256": "63120e62fb3cb6cfdae429ac23a32c54f179f10296bff5b7191848e0c770799c"
+      },
+      "release_assets": {
+        "jcode-freebsd-x86_64.tar.gz": {
+          "size": 40925876,
+          "sha256": "8d6f70da0e460e70de5b38f0e3be24ab8d1012106d713f86bbb8f699d1aa5de9"
+        },
+        "jcode-linux-aarch64.tar.gz": {
+          "size": 45247700,
+          "sha256": "b73b76f7fc8fd8d4d3b11851525452e8d41bec88b01a40eaaa8c4c81551e5081"
+        },
+        "jcode-linux-x86_64.tar.gz": {
+          "size": 43049151,
+          "sha256": "74e9426b0a8e26c5fcff7803d6a5716f8294d1158fa63feb1b429450ac3f705e"
+        },
+        "jcode-macos-aarch64.tar.gz": {
+          "size": 45277957,
+          "sha256": "5bb77022d9771e71358cb6a3e495f420170cb259f2191f6095fd9b7d9cd3037c"
+        },
+        "jcode-macos-x86_64.tar.gz": {
+          "size": 47684988,
+          "sha256": "fa84b54c85ef0dde6680e94399b08f3e73938d47619808332f6cab0596587548"
+        },
+        "jcode-windows-aarch64.exe": {
+          "size": 86703104,
+          "sha256": "39e7dd194ddcce3332569834fd7a8771eb3c08448ad9c84a38b20fd14fb24959"
+        },
+        "jcode-windows-aarch64.tar.gz": {
+          "size": 31820337,
+          "sha256": "32009ea13d3c2b3ce4048062748c35dd4af3483b434b527007320b75915b0c4d"
+        },
+        "jcode-windows-x86_64.exe": {
+          "size": 115020288,
+          "sha256": "01cfad20a9a7ba4c5f9bd0ad65942a61c1e5c4303688067d58f65f479e50d327"
+        },
+        "jcode-windows-x86_64.tar.gz": {
+          "size": 37703256,
+          "sha256": "789e132d596d43ad4a8ca3d965f067b0a93d278d8db82899178ce30dbdb9a79a"
+        }
+      },
+      "platform_assets": {
+        "freebsd/x86_64": "jcode-freebsd-x86_64.tar.gz",
+        "linux/aarch64": "jcode-linux-aarch64.tar.gz",
+        "linux/x86_64": "jcode-linux-x86_64.tar.gz",
+        "macos/aarch64": "jcode-macos-aarch64.tar.gz",
+        "macos/x86_64": "jcode-macos-x86_64.tar.gz",
+        "windows/aarch64": "jcode-windows-aarch64.exe",
+        "windows/x86_64": "jcode-windows-x86_64.exe"
+      },
+      "version_probe": {
+        "argv": [
+          "jcode",
+          "--version"
+        ],
+        "stdout_regex": "^jcode(?: version)? v?(?P<version>[0-9]+\\.[0-9]+\\.[0-9]+)(?: \\([0-9a-f]{7,40}\\))?\\r?\\n?$"
+      }
+    }
+  ]
+}

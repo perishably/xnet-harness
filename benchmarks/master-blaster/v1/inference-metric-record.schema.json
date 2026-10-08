@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xnet.local/schemas/inference-metric-record.v1.json",
+  "title": "XNET evaluator-signed inference metric record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "policy_sha256", "candidate_id", "candidate_config_sha256",
+    "model_id", "hardware_profile_sha256", "token_budget", "task_id", "task_family",
+    "benchmark_id", "benchmark_manifest_sha256", "run_id", "session_id", "replay_id",
+    "declared_role", "evidence_epoch", "seven_gates_receipt_sha256",
+    "inference_receipt_sha256", "prompt_sha256", "response_sha256", "metrics",
+    "evaluator", "leakage_controls", "receipt_sha256", "receipt_hmac_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "xnet.inference-metric-record.v1"},
+    "policy_sha256": {"$ref": "#/$defs/sha256"},
+    "candidate_id": {"$ref": "#/$defs/identifier"},
+    "candidate_config_sha256": {"$ref": "#/$defs/sha256"},
+    "model_id": {"$ref": "#/$defs/identifier"},
+    "hardware_profile_sha256": {"$ref": "#/$defs/sha256"},
+    "token_budget": {"type": "integer", "minimum": 1, "maximum": 10000000},
+    "task_id": {"$ref": "#/$defs/identifier"},
+    "task_family": {"$ref": "#/$defs/identifier"},
+    "benchmark_id": {"$ref": "#/$defs/identifier"},
+    "benchmark_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "run_id": {"$ref": "#/$defs/identifier"},
+    "session_id": {"$ref": "#/$defs/identifier"},
+    "replay_id": {"$ref": "#/$defs/identifier"},
+    "declared_role": {"enum": ["solver", "verifier", "challenger", "synthesizer"]},
+    "evidence_epoch": {"type": "integer", "minimum": 1, "maximum": 9223372036854775807},
+    "seven_gates_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "inference_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "prompt_sha256": {"$ref": "#/$defs/sha256"},
+    "response_sha256": {"$ref": "#/$defs/sha256"},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["correctness_ppm", "latency_ms", "cost_microunits", "output_tokens"],
+      "properties": {
+        "correctness_ppm": {"type": "integer", "minimum": 0, "maximum": 1000000},
+        "latency_ms": {"type": "integer", "minimum": 1, "maximum": 86400000},
+        "cost_microunits": {"type": "integer", "minimum": 0, "maximum": 1000000000000000000},
+        "output_tokens": {"type": "integer", "minimum": 1, "maximum": 10000000}
+      }
+    },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluator_id", "evaluator_kind", "evaluation_sha256"],
+      "properties": {
+        "evaluator_id": {"$ref": "#/$defs/identifier"},
+        "evaluator_kind": {"$ref": "#/$defs/identifier"},
+        "evaluation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "leakage_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generation_frozen_before_evaluation", "evaluator_feedback_consumed",
+        "private_tests_exposed", "reference_answer_exposed", "task_specific_memory_reused"
+      ],
+      "properties": {
+        "generation_frozen_before_evaluation": {"const": true},
+        "evaluator_feedback_consumed": {"const": false},
+        "private_tests_exposed": {"const": false},
+        "reference_answer_exposed": {"const": false},
+        "task_specific_memory_reused": {"const": false}
+      }
+    },
+    "receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "receipt_hmac_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identifier": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/+\\-]{0,127}$"}
+  }
+}

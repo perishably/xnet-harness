@@ -1,0 +1,80 @@
+name: "Bug report"
+description: "Report reproducible incorrect behavior in XNET~ Harness."
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for a focused report. Use synthetic data and remove credentials, private paths, hidden benchmark material, and raw provider responses. Security vulnerabilities belong in private vulnerability reporting.
+  - type: input
+    id: version
+    attributes:
+      label: "Version or commit"
+      description: "Give the release, tag, or full commit SHA."
+      placeholder: "0.1.0 or 0123456789abcdef..."
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Component"
+      options:
+        - "Core protocol, ledger, or scope"
+        - "HCE or HALO"
+        - "Retrieval or memory"
+        - "Repair, learning, or evaluator"
+        - "Model or application adapter"
+        - "Storage or transport"
+        - "Claw integration"
+        - "Native Rust runtime or SDK"
+        - "Mobile or native reference app"
+        - "Documentation, packaging, or CI"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Minimal reproduction"
+      description: "Provide the smallest synthetic input and exact commands. Do not include a secret or private corpus."
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: "Observed behavior"
+      description: "Include the error and a redacted receipt or trace if relevant."
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: "Trust boundary and impact"
+      description: "State what authority, source, storage root, callback, or external service is involved."
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment"
+      description: "OS, Python/Rust versions, optional adapter, and relevant configuration without credentials."
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Reporter checks"
+      options:
+        - label: "I reproduced this with synthetic or redistributable data."
+          required: true
+        - label: "I removed credentials, private data, hidden answers, and personal paths."
+          required: true
+        - label: "This report does not require private security handling."
+          required: true

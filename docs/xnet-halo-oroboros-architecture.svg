@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1280" viewBox="0 0 1800 1280" role="img" aria-labelledby="title desc">
+  <title id="title">XNET Harness HALO and Oroboros architecture map</title>
+  <desc id="desc">A status-aware architecture map. It shows verified source intake, RAG and HCE, a caller-owned model center surrounded by per-engine HALO advice and Oroboros context rotation, raw versus retrieval versus full XNET repair comparison, OpenClaw and NullClaw trust gates, optional storage and phone rings, a tested local transport-free Legions protocol core, and planned Legions networking, execution, scheduling, quorum, and aggregation layers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.52" stop-color="#0b1628"/>
+      <stop offset="1" stop-color="#101827"/>
+    </linearGradient>
+    <radialGradient id="modelGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#153b58"/>
+      <stop offset="0.72" stop-color="#10283d"/>
+      <stop offset="1" stop-color="#0c1b2b"/>
+    </radialGradient>
+    <linearGradient id="haloStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.48" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#77a7c9"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#c4b5fd"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+      .title { fill: #f8fbff; font-size: 38px; font-weight: 760; letter-spacing: .6px; }
+      .subtitle { fill: #a9bdd0; font-size: 17px; font-weight: 450; }
+      .panel { fill: #0c1728; stroke: #29435f; stroke-width: 2; }
+      .panel-title { fill: #ecf5ff; font-size: 20px; font-weight: 720; letter-spacing: 1.2px; }
+      .panel-note { fill: #91a7bb; font-size: 14px; }
+      .box { fill: #101f33; stroke: #36536e; stroke-width: 1.5; }
+      .box-proven { fill: #0e2430; stroke: #34d399; stroke-width: 2; }
+      .box-optional { fill: #101f33; stroke: #60a5fa; stroke-width: 2; stroke-dasharray: 4 6; }
+      .box-planned { fill: #191c35; stroke: #c4b5fd; stroke-width: 2; stroke-dasharray: 10 7; }
+      .label { fill: #f1f7fd; font-size: 16px; font-weight: 700; }
+      .body { fill: #b8c9d9; font-size: 14px; }
+      .micro { fill: #91a7bb; font-size: 12px; }
+      .green { fill: #6ee7b7; }
+      .blue { fill: #93c5fd; }
+      .purple { fill: #d8b4fe; }
+      .amber { fill: #fcd34d; }
+      .line { fill: none; stroke: #77a7c9; stroke-width: 2; marker-end: url(#arrow); }
+      .line-green { fill: none; stroke: #34d399; stroke-width: 2.2; marker-end: url(#arrowGreen); }
+      .line-purple { fill: none; stroke: #c4b5fd; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#arrowPurple); }
+      .trust { fill: none; stroke: #fb7185; stroke-width: 2; stroke-dasharray: 8 7; }
+      .badge-text { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 11px; font-weight: 760; letter-spacing: .8px; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1280" fill="url(#bg)"/>
+  <path d="M44 142 H1756" stroke="#243950" stroke-width="1"/>
+
+  <g class="sans">
+    <text x="48" y="62" class="title">XNET~ Harness  •  HALO / Oroboros system map</text>
+    <text x="50" y="102" class="subtitle">A model-neutral evidence harness around caller-owned inference • status and trust boundaries are part of the design</text>
+
+    <text x="920" y="34" class="micro" font-weight="700" letter-spacing="1.1">PROVEN / PLANNED LEGEND</text>
+    <rect x="920" y="49" width="188" height="48" rx="12" class="box-proven"/>
+    <text x="936" y="69" class="badge-text green">PROVEN HERE*</text>
+    <text x="936" y="87" class="micro">source + contract tests</text>
+    <rect x="1120" y="49" width="190" height="48" rx="12" class="box-planned"/>
+    <text x="1136" y="69" class="badge-text purple">PLANNED</text>
+    <text x="1136" y="87" class="micro">architecture, not a result</text>
+    <rect x="1322" y="49" width="214" height="48" rx="12" class="box-optional"/>
+    <text x="1338" y="69" class="badge-text blue">OPTIONAL / CALLER</text>
+    <text x="1338" y="87" class="micro">external service or hardware</text>
+    <path d="M1552 71 H1604" class="trust"/>
+    <text x="1618" y="69" class="badge-text" fill="#fda4af">TRUST BOUNDARY</text>
+    <text x="1618" y="87" class="micro">verify before crossing</text>
+    <text x="920" y="119" class="micro">*Included behavior on synthetic fixtures; no deployment, model-quality, or speed claim.</text>
+
+    <!-- Panel 1: intake -->
+    <rect x="45" y="170" width="410" height="505" rx="22" class="panel"/>
+    <text x="73" y="210" class="panel-title">1 / RAG + HCE INTAKE</text>
+    <text x="73" y="232" class="panel-note">Selected bytes become bounded, source-addressed context.</text>
+
+    <rect x="73" y="255" width="354" height="68" rx="14" class="box"/>
+    <circle cx="96" cy="278" r="7" fill="#fcd34d"/>
+    <text x="113" y="281" class="label">Caller-approved sources</text>
+    <text x="94" y="304" class="body">Caller supplies classification + trusted pins.</text>
+
+    <path d="M250 323 V346 H157" class="line"/>
+    <path d="M73 288 H59 V491 H73" class="line"/>
+    <rect x="73" y="347" width="164" height="78" rx="14" class="box-proven"/>
+    <text x="91" y="375" class="label">RAG selection</text>
+    <text x="91" y="397" class="body">Local catalog + slices</text>
+    <text x="91" y="416" class="micro">bounded source cards</text>
+
+    <path d="M237 386 H261" class="line-green"/>
+    <rect x="263" y="347" width="164" height="78" rx="14" class="box-proven"/>
+    <text x="281" y="375" class="label">HCE capsule</text>
+    <text x="281" y="397" class="body">Exact bytes + full hashes</text>
+    <text x="281" y="416" class="micro">lossless; no authority</text>
+
+    <path d="M427 386 H440 V601 H427" class="line-green"/>
+    <rect x="73" y="450" width="354" height="82" rx="14" class="box-proven"/>
+    <text x="92" y="478" class="label">OpenClaw source gate</text>
+    <text x="92" y="500" class="body">Public • scoped • TTL-bound • context only</text>
+    <text x="92" y="520" class="micro">Commands stay data; the upstream app is not invoked.</text>
+
+    <path d="M250 532 V556" class="line-green"/>
+    <rect x="73" y="557" width="354" height="88" rx="14" class="box-proven"/>
+    <text x="92" y="585" class="label">NullClaw controls + scoped store</text>
+    <text x="92" y="607" class="body">Cancel • contain • quarantine | admit ledger + CAS</text>
+    <text x="92" y="628" class="micro">Receipts, immutable indexes, CAS, and verified fetch.</text>
+
+    <!-- trust boundary between context and model -->
+    <path d="M467 193 V657" class="trust"/>
+    <rect x="457" y="270" width="20" height="286" rx="10" fill="#0b1628"/>
+    <text x="471" y="544" transform="rotate(-90 471 544)" fill="#fda4af" font-size="12" font-weight="700" letter-spacing="1">SOURCE → PROMPT TRUST BOUNDARY</text>
+
+    <!-- Panel 2: model center -->
+    <rect x="490" y="170" width="695" height="505" rx="22" class="panel"/>
+    <text x="518" y="210" class="panel-title">2 / MODEL CENTER + CONTEXT ROTATION</text>
+    <text x="518" y="232" class="panel-note">The application owns the model, prompt rendering, token count, session, credentials, and tools.</text>
+
+    <rect x="518" y="253" width="639" height="98" rx="16" class="box-proven"/>
+    <text x="537" y="279" class="label">HALO • per-engine context advice</text>
+    <rect x="537" y="292" width="112" height="36" rx="10" fill="#123245" stroke="#67e8f9"/>
+    <text x="553" y="315" class="body">ENGINE A PIN</text>
+    <rect x="660" y="292" width="112" height="36" rx="10" fill="#123245" stroke="#60a5fa"/>
+    <text x="676" y="315" class="body">ENGINE B PIN</text>
+    <rect x="783" y="292" width="112" height="36" rx="10" fill="#123245" stroke="#34d399"/>
+    <text x="799" y="315" class="body">ENGINE C PIN</text>
+    <text x="916" y="307" class="micro">weights • runner • tokenizer</text>
+    <text x="916" y="324" class="micro">template • config • evidence</text>
+    <text x="537" y="344" class="micro">Exact measured prompt in; review/headroom advice out. HALO does not rotate a session.</text>
+
+    <rect x="519" y="401" width="190" height="118" rx="16" class="box-proven"/>
+    <text x="538" y="430" class="label">Oroboros context</text>
+    <text x="538" y="453" class="body">Verify → select → reserve</text>
+    <text x="538" y="475" class="body">→ freeze handoff</text>
+    <text x="538" y="500" class="micro">source + capsule identities</text>
+
+    <circle cx="838" cy="456" r="121" fill="none" stroke="url(#haloStroke)" stroke-width="4" stroke-dasharray="9 9"/>
+    <path d="M759 365 A121 121 0 0 1 944 399" class="line-green"/>
+    <circle cx="838" cy="456" r="86" fill="url(#modelGlow)" stroke="#93c5fd" stroke-width="2.5"/>
+    <text x="838" y="435" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="760" letter-spacing="1.1">CALLER-OWNED</text>
+    <text x="838" y="465" text-anchor="middle" fill="#f8fbff" font-size="24" font-weight="760">MODEL</text>
+    <text x="838" y="489" text-anchor="middle" class="micro">one selected engine</text>
+    <text x="838" y="507" text-anchor="middle" class="micro">tools authorized separately</text>
+    <path d="M709 459 H746" class="line-green"/>
+
+    <rect x="967" y="401" width="190" height="118" rx="16" class="box-proven"/>
+    <text x="986" y="430" class="label">Outcome receipt</text>
+    <text x="986" y="453" class="body">Output + observed cost</text>
+    <text x="986" y="475" class="body">+ public evaluation</text>
+    <text x="986" y="500" class="micro">correctness checked outside model</text>
+    <path d="M925 459 H967" class="line-green"/>
+
+    <path d="M1061 519 V568 H614 V523" class="line-green"/>
+    <rect x="680" y="550" width="315" height="36" rx="12" fill="#0e2a2d" stroke="#34d399"/>
+    <text x="838" y="573" text-anchor="middle" class="body">review due → caller creates fresh session → verified replay</text>
+
+    <rect x="518" y="609" width="639" height="42" rx="12" fill="#121d2c" stroke="#36536e"/>
+    <text x="838" y="635" text-anchor="middle" class="body">No global token threshold • no hidden-state transfer • no silent provider fallback</text>
+
+    <!-- trust boundary to optional systems -->
+    <path d="M1194 193 V657" class="trust"/>
+    <rect x="1184" y="265" width="20" height="295" rx="10" fill="#0b1628"/>
+    <text x="1198" y="544" transform="rotate(-90 1198 544)" fill="#fda4af" font-size="12" font-weight="700" letter-spacing="1">LOCAL CORE → EXTERNAL TRUST BOUNDARY</text>
+
+    <!-- Panel 3: optional rings -->
+    <rect x="1217" y="170" width="538" height="505" rx="22" class="panel"/>
+    <text x="1245" y="210" class="panel-title">OPTIONAL STORAGE / PHONE RINGS</text>
+    <text x="1245" y="232" class="panel-note">Labels describe possible deployment tiers, never automatic discovery or authority.</text>
+
+    <rect x="1245" y="255" width="230" height="72" rx="15" class="box-optional"/>
+    <text x="1263" y="282" class="label">C: local root*</text>
+    <text x="1263" y="305" class="body">live ledger / context</text>
+    <rect x="1495" y="255" width="230" height="72" rx="15" class="box-optional"/>
+    <text x="1513" y="282" class="label">4 TB disk*</text>
+    <text x="1513" y="305" class="body">portable / warm copy</text>
+    <rect x="1245" y="347" width="230" height="72" rx="15" class="box-optional"/>
+    <text x="1263" y="374" class="label">Proton Drive</text>
+    <text x="1263" y="397" class="body">approved archive folder</text>
+    <rect x="1495" y="347" width="230" height="72" rx="15" class="box-optional"/>
+    <text x="1513" y="374" class="label">Google Drive</text>
+    <text x="1513" y="397" class="body">approved archive folder</text>
+
+    <rect x="1245" y="439" width="480" height="68" rx="14" fill="#101c2b" stroke="#36536e"/>
+    <text x="1263" y="465" class="body">Four logical-root circulation + local readback are tested.</text>
+    <text x="1263" y="487" class="micro">*Illustrative deployment names. Sync, capacity, and remote provider readback stay caller-managed.</text>
+
+    <rect x="1245" y="527" width="480" height="118" rx="16" class="box-optional"/>
+    <text x="1264" y="555" class="label">NetBird-reachable phone</text>
+    <rect x="1264" y="570" width="200" height="31" rx="10" fill="#142b45" stroke="#60a5fa"/>
+    <text x="1364" y="591" text-anchor="middle" class="body">controller / relay</text>
+    <rect x="1477" y="570" width="229" height="31" rx="10" fill="#142b45" stroke="#60a5fa"/>
+    <text x="1592" y="591" text-anchor="middle" class="body">small-model worker†</text>
+    <text x="1264" y="621" class="micro">Source UI + pure gates exist; live TLS and device compute are not certified.</text>
+    <text x="1264" y="638" class="micro">†Only after hardware, thermal, policy, model, and per-device HALO qualification.</text>
+
+    <!-- Panel 4: comparison and repair loop -->
+    <rect x="45" y="704" width="1140" height="526" rx="22" class="panel"/>
+    <text x="73" y="744" class="panel-title">3 / RAW ↔ RETRIEVAL ↔ FULL XNET COMPARISON</text>
+    <text x="73" y="766" class="panel-note">Implemented benchmark infrastructure; the diagram does not report or imply a score.</text>
+
+    <rect x="73" y="786" width="334" height="96" rx="16" class="box-proven"/>
+    <text x="93" y="815" class="label">RAW</text>
+    <text x="93" y="838" class="body">Issue + source + evaluator declaration</text>
+    <text x="93" y="860" class="micro">No retrieved card or XNET route</text>
+
+    <rect x="427" y="786" width="334" height="96" rx="16" class="box-proven"/>
+    <text x="447" y="815" class="label">RETRIEVAL</text>
+    <text x="447" y="838" class="body">Raw + deterministic frozen-corpus cards</text>
+    <text x="447" y="860" class="micro">Same two cards across bounded attempts</text>
+
+    <rect x="781" y="786" width="374" height="96" rx="16" class="box-proven"/>
+    <text x="801" y="815" class="label">FULL XNET</text>
+    <text x="801" y="838" class="body">Retrieval + HCE IDs + route + accordion retry</text>
+    <text x="801" y="860" class="micro">Context expands only after a public failure</text>
+
+    <rect x="73" y="897" width="1082" height="40" rx="12" fill="#121f2f" stroke="#36536e"/>
+    <text x="614" y="922" text-anchor="middle" class="body">Same model • same strict schema • same bounded evaluator • at most one public-feedback retry • hidden feedback withheld</text>
+
+    <rect x="73" y="963" width="150" height="78" rx="14" class="box-proven"/>
+    <text x="148" y="990" text-anchor="middle" class="label">PROPOSE</text>
+    <text x="148" y="1014" text-anchor="middle" class="micro">caller model output</text>
+    <path d="M223 1002 H246" class="line-green"/>
+    <rect x="248" y="963" width="150" height="78" rx="14" class="box-proven"/>
+    <text x="323" y="990" text-anchor="middle" class="label">ADMIT</text>
+    <text x="323" y="1014" text-anchor="middle" class="micro">schema + no-op gate</text>
+    <path d="M398 1002 H421" class="line-green"/>
+    <rect x="423" y="963" width="150" height="78" rx="14" class="box-proven"/>
+    <text x="498" y="990" text-anchor="middle" class="label">PUBLIC TEST</text>
+    <text x="498" y="1014" text-anchor="middle" class="micro">bounded AST evaluator</text>
+    <path d="M573 1002 H596" class="line-green"/>
+    <rect x="598" y="963" width="150" height="78" rx="14" class="box-proven"/>
+    <text x="673" y="990" text-anchor="middle" class="label">FEEDBACK</text>
+    <text x="673" y="1014" text-anchor="middle" class="micro">public result only</text>
+    <path d="M748 1002 H771" class="line-green"/>
+    <rect x="773" y="963" width="150" height="78" rx="14" class="box-proven"/>
+    <text x="848" y="990" text-anchor="middle" class="label">FREEZE</text>
+    <text x="848" y="1014" text-anchor="middle" class="micro">immutable choice</text>
+    <path d="M923 1002 H946" class="line-green"/>
+    <rect x="948" y="963" width="207" height="78" rx="14" class="box-proven"/>
+    <text x="1052" y="990" text-anchor="middle" class="label">HELD-OUT GRADE</text>
+    <text x="1052" y="1014" text-anchor="middle" class="micro">zero model calls after freeze</text>
+
+    <path d="M673 1041 V1080 H148 V1044" class="line-green"/>
+    <text x="410" y="1071" text-anchor="middle" class="micro">one bounded retry when policy permits</text>
+
+    <rect x="73" y="1101" width="1082" height="92" rx="16" fill="#10282b" stroke="#34d399" stroke-width="2"/>
+    <text x="95" y="1130" class="label">Repair → test → feedback → evidence gate</text>
+    <text x="95" y="1154" class="body">Retain the incumbent after a tie or regression; promote guidance only under declared outcome and cost rules.</text>
+    <text x="95" y="1178" class="micro">Harness policy may change. Model weights do not change in this loop. Successful receipts do not establish unseen generalization.</text>
+
+    <!-- Panel 5: tested Legions protocol core and planned distributed runtime -->
+    <rect x="1210" y="704" width="545" height="526" rx="22" class="panel"/>
+    <text x="1238" y="744" class="panel-title">4 / LEGIONS • LOCAL CORE + SCALE-OUT</text>
+    <text x="1238" y="766" class="panel-note">Transport-free contracts are tested locally.</text>
+    <text x="1238" y="785" class="panel-note">Networking, execution, and coordination remain planned.</text>
+
+    <rect x="1238" y="802" width="489" height="101" rx="15" class="box-proven"/>
+    <text x="1257" y="829" class="label">Local protocol core</text>
+    <text x="1600" y="829" class="badge-text green">PROVEN HERE*</text>
+    <text x="1257" y="853" class="body">Capability card • job capsule • WorkerGate admission</text>
+    <text x="1257" y="876" class="body">kill / revoke / replay • HMAC-SHA256 result receipt</text>
+    <text x="1257" y="895" class="micro">Hash-addressed; caller supplies peer identity, key, clock, and sandbox.</text>
+
+    <text x="1238" y="927" class="badge-text purple">PLANNED DISTRIBUTED RUNTIME</text>
+    <rect x="1238" y="940" width="220" height="91" rx="15" class="box-planned"/>
+    <text x="1257" y="966" class="label">Coordinator daemon</text>
+    <text x="1257" y="988" class="body">network • discovery</text>
+    <text x="1257" y="1008" class="micro">scheduling • sandbox execution</text>
+    <text x="1257" y="1025" class="micro">budget enforcement</text>
+
+    <path d="M1458 966 H1484 V958 H1501" class="line-purple"/>
+    <path d="M1458 1005 H1484 V1015 H1501" class="line-purple"/>
+
+    <rect x="1502" y="934" width="225" height="48" rx="13" class="box-planned"/>
+    <text x="1520" y="955" class="label">OPT-IN NODE 1</text>
+    <text x="1520" y="974" class="micro">capability • policy • revoke</text>
+    <rect x="1502" y="991" width="225" height="48" rx="13" class="box-planned"/>
+    <text x="1520" y="1012" class="label">OPT-IN NODE N</text>
+    <text x="1520" y="1031" class="micro">job • nonce • identity • key</text>
+
+    <rect x="1238" y="1055" width="489" height="73" rx="15" class="box-planned"/>
+    <text x="1257" y="1081" class="label">Quorum / aggregation layer</text>
+    <text x="1257" y="1103" class="body">independent verification • conflicts • provenance</text>
+    <text x="1257" y="1121" class="micro">Planned; no combined-result or throughput claim.</text>
+
+    <path d="M1229 1145 H1736" class="trust"/>
+    <text x="1240" y="1167" fill="#fda4af" font-size="12" font-weight="700" letter-spacing="1">PRIVACY BOUNDARY • only explicitly scoped input bytes may cross</text>
+    <text x="1238" y="1190" class="body">1 → N means separately admitted jobs, never automatic authority.</text>
+    <text x="1238" y="1211" class="micro">Measure end to end; no linear-speed, quality, or private-data claim.</text>
+  </g>
+</svg>
